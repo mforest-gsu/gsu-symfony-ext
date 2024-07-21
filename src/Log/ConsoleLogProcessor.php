@@ -6,6 +6,7 @@ namespace Gsu\Symfony\Log;
 
 use Gsu\Symfony\Exception\StackTrace;
 use Gsu\Symfony\Utils\Timer;
+use Monolog\Attribute\AsMonologProcessor;
 use Monolog\LogRecord;
 use Monolog\Processor\ProcessorInterface;
 use Psr\Log\LoggerAwareInterface;
@@ -20,6 +21,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Contracts\Service\ResetInterface;
 
+#[AsMonologProcessor]
 final class ConsoleLogProcessor implements
     LoggerAwareInterface,
     EventSubscriberInterface,
