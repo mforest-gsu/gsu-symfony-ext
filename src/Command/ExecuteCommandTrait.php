@@ -73,7 +73,7 @@ trait ExecuteCommandTrait
         callable $logger
     ): int {
         $process = new Process($input, null, null, null, null);
-        $process->start(fn (string $type, string $data): void => $logger($data));
+        $process->start(fn (string $type, string $data) => $logger($data));
         $process->wait();
         return $process->getExitCode() ?? 1;
     }
