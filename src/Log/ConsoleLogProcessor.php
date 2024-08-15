@@ -100,12 +100,10 @@ final class ConsoleLogProcessor implements
             $this->logNotice(sprintf(
                 "Started with arguments: %s",
                 json_encode(
-                    $input instanceof ArgvInput
-                        ? $input->getRawTokens(true)
-                        : array_merge(
-                            $input->getArguments(),
-                            $input->getOptions()
-                        ),
+                    array_merge(
+                        $input->getArguments(),
+                        $input->getOptions()
+                    ),
                     JSON_THROW_ON_ERROR
                 )
             ));
